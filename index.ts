@@ -15,7 +15,7 @@ function handlePreFlightRequest(): Response {
 	  handlePreFlightRequest();
 	}
 
-	return new Response(JSON.stringify(_req.url), {
+	return new Response(JSON.stringify({value: 0}), {
 	status: 200,
 	headers: {
 		"Content-Type": "application/json",
