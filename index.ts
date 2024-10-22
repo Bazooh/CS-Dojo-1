@@ -19,7 +19,7 @@ function handlePreFlightRequest(): Response {
 	headers.append("Content-Type", "application/json");
   
 	const similarityRequestBody = JSON.stringify({
-	  word1: "llkhh",
+	  word1: "tomate",
 	  word2: "supelec",
 	});
   
