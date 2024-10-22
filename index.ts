@@ -20,17 +20,13 @@ function handlePreFlightRequest(): Response {
 
 	const parser = _req.url.split("/");
 
-	return new Response(JSON.stringify(parser.length), {
-	status: 200,
-	headers: {
-		"Content-Type": "application/json",
-		"Access-Control-Allow-Origin": "*",
-		"Access-Control-Allow-Headers": "content-type",
-	},
-	});
-  
+	var word = "tomate";
+	if (parser.length > 4) {
+		word = parser[4];
+	}
+	
 	const similarityRequestBody = JSON.stringify({
-	  word1: "tomate",
+	  word1: word,
 	  word2: "supelec",
 	});
   
