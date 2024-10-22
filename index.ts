@@ -49,7 +49,7 @@ function handlePreFlightRequest(): Response {
   
 	  const result = parseFloat((await response.json()).result);
 
-	  return new Response(JSON.stringify({value: result}), {
+	  return new Response(JSON.stringify({value: 50 * (result + 1)}), {
 		status: 200,
 		headers: {
 			"Content-Type": "application/json",
