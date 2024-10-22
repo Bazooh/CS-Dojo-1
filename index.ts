@@ -21,7 +21,7 @@ function handlePreFlightRequest(): Response {
 	const parser = _req.url.split("/");
 	
 	const similarityRequestBody = JSON.stringify({
-	  word1: parser[-1],
+	  word1: parser[parser.length - 1],
 	  word2: "supelec",
 	});
   
