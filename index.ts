@@ -14,6 +14,8 @@ function handlePreFlightRequest(): Response {
 	if (_req.method == "OPTIONS") {
 	  handlePreFlightRequest();
 	}
+
+	console.log("Received request:", _req);
   
 	const headers = new Headers();
 	headers.append("Content-Type", "application/json");
