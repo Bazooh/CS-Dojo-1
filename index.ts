@@ -17,6 +17,15 @@ function handlePreFlightRequest(): Response {
   
 	const headers = new Headers();
 	headers.append("Content-Type", "application/json");
+
+	return new Response(JSON.stringify(_req.url), {
+	status: 200,
+	headers: {
+		"Content-Type": "application/json",
+		"Access-Control-Allow-Origin": "*",
+		"Access-Control-Allow-Headers": "content-type",
+	},
+	});
   
 	const similarityRequestBody = JSON.stringify({
 	  word1: "tomate",
