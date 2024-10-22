@@ -14,15 +14,6 @@ function handlePreFlightRequest(): Response {
 	if (_req.method == "OPTIONS") {
 	  handlePreFlightRequest();
 	}
-
-	return new Response(JSON.stringify({value: 15}), {
-	status: 200,
-	headers: {
-		"Content-Type": "application/json",
-		"Access-Control-Allow-Origin": "*",
-		"Access-Control-Allow-Headers": "content-type",
-	},
-	});
   
 	const headers = new Headers();
 	headers.append("Content-Type", "application/json");
@@ -34,9 +25,18 @@ function handlePreFlightRequest(): Response {
 		word = parser[4];
 	}
 	
-	const similarityRequestBody = JSON.stringify({
+	const similarityRequestBody = 100 * parseFloat(JSON.stringify({
 	  word1: word,
 	  word2: "supelec",
+	}));
+
+	return new Response(JSON.stringify(similarityRequestBody), {
+	status: 200,
+	headers: {
+		"Content-Type": "application/json",
+		"Access-Control-Allow-Origin": "*",
+		"Access-Control-Allow-Headers": "content-type",
+	},
 	});
   
 	const requestOptions = {
