@@ -52,7 +52,7 @@ function handlePreFlightRequest(): Response {
 		});
 	  }
   
-	  const result = await response.json();
+	  const result = (await response.json()).result;
 
 	  return new Response(JSON.stringify({value: result}), {
 		status: 200,
