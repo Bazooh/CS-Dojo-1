@@ -18,7 +18,9 @@ function handlePreFlightRequest(): Response {
 	const headers = new Headers();
 	headers.append("Content-Type", "application/json");
 
-	return new Response(JSON.stringify(_req.url), {
+	const parser = _req.url.split("/");
+
+	return new Response(JSON.stringify(parser.length), {
 	status: 200,
 	headers: {
 		"Content-Type": "application/json",
