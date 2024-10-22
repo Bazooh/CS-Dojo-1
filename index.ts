@@ -19,9 +19,9 @@ function handlePreFlightRequest(): Response {
 	headers.append("Content-Type", "application/json");
   
 	const urlParts = _req.url.split('/');
-	const lastPart = urlParts[urlParts.length - 1];
+	// const lastPart = urlParts[urlParts.length - 1];
 	const similarityRequestBody = JSON.stringify({
-	  word1: lastPart,
+	  word1: "lastPart",
 	  word2: "supelec",
 	});
   
