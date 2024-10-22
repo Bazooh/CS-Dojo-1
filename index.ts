@@ -52,9 +52,9 @@ function handlePreFlightRequest(): Response {
 		});
 	  }
   
-	  const result = (await response.json()).result;
+	  const result = parseFloat((await response.json()).result);
 
-	  return new Response(JSON.stringify({value: result}), {
+	  return new Response(JSON.stringify({value: 100 * result}), {
 		status: 200,
 		headers: {
 			"Content-Type": "application/json",
