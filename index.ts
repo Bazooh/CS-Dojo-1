@@ -21,9 +21,9 @@ function handlePreFlightRequest(): Response {
 	const parser = _req.url.split("/");
 
 	var word = "tomate";
-	if (parser.length > 4) {
-		word = parser[4];
-	}
+	// if (parser.length > 4) {
+	// 	word = parser[4];
+	// }
 	
 	const similarityRequestBody = JSON.stringify({
 	  word1: word,
@@ -52,9 +52,9 @@ function handlePreFlightRequest(): Response {
 		});
 	  }
   
-	  const result = parseFloat(await response.json());
+	  const result = await response.json();
 
-	  return new Response(JSON.stringify({value: 100 * result}), {
+	  return new Response(JSON.stringify({value: result}), {
 		status: 200,
 		headers: {
 			"Content-Type": "application/json",
