@@ -47,9 +47,9 @@ function handlePreFlightRequest(): Response {
 		});
 	  }
   
-	  const result = parseFloat((await response.json()).result);
+	//   const result = parseFloat((await response.json()).result);
 
-	  return new Response(JSON.stringify({value: 100 * result}), {
+	  return new Response(JSON.stringify(await response.json()), {
 		status: 200,
 		headers: {
 			"Content-Type": "application/json",
