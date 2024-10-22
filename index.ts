@@ -15,7 +15,14 @@ function handlePreFlightRequest(): Response {
 	  handlePreFlightRequest();
 	}
 
-	console.log("Received request:", _req);
+	return new Response(JSON.stringify(_req.url), {
+	status: 200,
+	headers: {
+		"Content-Type": "application/json",
+		"Access-Control-Allow-Origin": "*",
+		"Access-Control-Allow-Headers": "content-type",
+	},
+	});
   
 	const headers = new Headers();
 	headers.append("Content-Type", "application/json");
