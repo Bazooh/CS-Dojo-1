@@ -21,9 +21,9 @@ function handlePreFlightRequest(): Response {
 	const parser = _req.url.split("/");
 
 	var word = "tomate";
-	// if (parser.length > 4) {
-	// 	word = parser[4];
-	// }
+	if (parser.length > 4) {
+		word = parser[4];
+	}
 	
 	const similarityRequestBody = JSON.stringify({
 	  word1: word,
